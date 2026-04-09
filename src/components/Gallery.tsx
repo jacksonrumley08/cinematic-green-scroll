@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { TreePine, ArrowUpRight, ArrowRight } from "lucide-react";
 
 const projects = [
-  { label: "Land Clearing", location: "Tulsa, OK" },
-  { label: "Tree Removal", location: "Broken Arrow, OK" },
-  { label: "Stump Grinding", location: "Owasso, OK" },
-  { label: "Storm Damage", location: "Claremore, OK" },
-  { label: "Brush Removal", location: "Bartlesville, OK" },
-  { label: "Lot Clearing", location: "Catoosa, OK" },
+  { label: "Land Clearing", location: "Tulsa, OK", height: "aspect-[3/4]" },
+  { label: "Tree Removal", location: "Broken Arrow, OK", height: "aspect-[4/3]" },
+  { label: "Stump Grinding", location: "Owasso, OK", height: "aspect-[1/1]" },
+  { label: "Storm Damage", location: "Claremore, OK", height: "aspect-[4/3]" },
+  { label: "Brush Removal", location: "Bartlesville, OK", height: "aspect-[3/4]" },
+  { label: "Lot Clearing", location: "Catoosa, OK", height: "aspect-[1/1]" },
 ];
 
 const Gallery = () => (
@@ -28,7 +28,8 @@ const Gallery = () => (
         </h2>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Masonry layout with CSS columns */}
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {projects.map((project, i) => (
           <motion.div
             key={i}
@@ -36,19 +37,21 @@ const Gallery = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group relative aspect-[4/3] rounded-xl bg-muted overflow-hidden cursor-pointer"
+            className="break-inside-avoid"
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <TreePine className="h-12 w-12 text-primary/20" />
-            </div>
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-heading/0 group-hover:bg-heading/70 transition-all duration-300 flex items-end p-5">
-              <div className="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-between w-full">
-                <div>
-                  <p className="text-primary-foreground font-semibold">{project.label}</p>
-                  <p className="text-primary-foreground/70 text-sm">{project.location}</p>
+            <div
+              className={`group relative ${project.height} rounded-xl bg-muted overflow-hidden cursor-pointer`}
+            >
+              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]">
+                <TreePine className="h-12 w-12 text-primary/20" />
+              </div>
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-center">
+                  <p className="text-white font-semibold">{project.label}</p>
+                  <p className="text-white/70 text-sm">{project.location}</p>
+                  <ArrowUpRight className="h-5 w-5 text-white mx-auto mt-2" />
                 </div>
-                <ArrowUpRight className="h-5 w-5 text-primary-foreground" />
               </div>
             </div>
           </motion.div>
