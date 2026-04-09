@@ -22,7 +22,7 @@ const Index = () => (
     <Gallery />
     <WhyUs />
     <Testimonials />
-    <ServiceArea />
+    {/* ServiceArea removed */}
     <Contact />
     <Footer />
   </div>
