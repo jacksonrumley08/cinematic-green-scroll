@@ -58,12 +58,23 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-2xl shadow-primary/30 border border-primary/10 relative overflow-hidden"
-              style={{ boxShadow: "inset 0 2px 30px rgba(0,0,0,0.2), 0 25px 50px -12px rgba(21,128,61,0.3)" }}
+            <div className="aspect-[4/3] rounded-2xl relative overflow-hidden"
+              style={{
+                background: "linear-gradient(135deg, rgba(21,128,61,0.6) 0%, rgba(34,197,94,0.4) 50%, rgba(21,128,61,0.55) 100%)",
+                boxShadow: "inset 0 2px 40px rgba(0,0,0,0.25), 0 25px 50px -12px rgba(21,128,61,0.3)",
+              }}
             >
-              <TreePine className="h-32 w-32 text-white/15" strokeWidth={1} />
-              <TreePine className="absolute bottom-6 left-8 h-20 w-20 text-white/10" strokeWidth={1} />
-              <TreePine className="absolute top-8 right-10 h-16 w-16 text-white/10" strokeWidth={1} />
+              {/* Background texture */}
+              <div className="absolute inset-0" style={{
+                backgroundImage: "radial-gradient(circle at 20% 80%, rgba(255,255,255,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 40%)",
+              }} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <TreePine className="h-44 w-44 text-white/25" strokeWidth={0.8} />
+              </div>
+              <TreePine className="absolute bottom-4 left-6 h-28 w-28 text-white/15" strokeWidth={0.8} />
+              <TreePine className="absolute top-6 right-8 h-24 w-24 text-white/12" strokeWidth={0.8} />
+              <TreePine className="absolute top-1/2 left-[15%] h-16 w-16 text-white/8" strokeWidth={0.8} />
+              <TreePine className="absolute bottom-8 right-[20%] h-20 w-20 text-white/10" strokeWidth={0.8} />
             </div>
             {/* Floating badge */}
             <motion.div
