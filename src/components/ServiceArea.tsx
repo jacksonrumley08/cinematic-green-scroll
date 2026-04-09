@@ -9,25 +9,25 @@ const cities = [
 ];
 
 const OklahomaSVG = () => (
-  <svg viewBox="0 0 500 350" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-    {/* Oklahoma state outline - simplified */}
+  <svg viewBox="0 0 500 320" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    {/* Full Oklahoma outline with proportional panhandle */}
     <path
-      d="M 30 90 L 170 90 L 170 30 L 200 30 L 200 90 L 470 90 L 470 120 L 480 140 L 470 160 L 475 180 L 460 200 L 465 220 L 450 240 L 445 260 L 430 270 L 420 260 L 400 265 L 380 260 L 360 265 L 340 260 L 320 265 L 300 260 L 280 265 L 260 260 L 240 265 L 220 260 L 200 265 L 180 260 L 160 265 L 140 260 L 120 265 L 100 260 L 80 265 L 60 260 L 40 265 L 30 260 Z"
+      d="M 30 95 L 165 95 L 165 70 L 195 70 L 195 95 L 470 95 L 470 125 L 478 145 L 470 165 L 474 185 L 460 200 L 464 218 L 450 235 L 446 252 L 432 262 L 420 254 L 402 258 L 384 252 L 366 258 L 348 252 L 330 258 L 312 252 L 294 258 L 276 252 L 258 258 L 240 252 L 222 258 L 204 252 L 186 258 L 168 252 L 150 258 L 132 252 L 114 258 L 96 252 L 78 258 L 60 252 L 42 258 L 30 252 Z"
       fill="#E5E7EB"
-      stroke="#D1D5DB"
-      strokeWidth="2"
+      stroke="#15803D"
+      strokeWidth="1.5"
     />
-    {/* NE Oklahoma highlight region */}
+    {/* NE Oklahoma highlighted region */}
     <path
-      d="M 280 90 L 470 90 L 470 120 L 480 140 L 470 160 L 475 180 L 460 200 L 465 220 L 450 240 L 445 260 L 430 270 L 420 260 L 400 265 L 380 260 L 360 265 L 340 260 L 320 265 L 300 260 L 280 265 L 280 90 Z"
-      fill="hsl(142 64% 29% / 0.2)"
+      d="M 290 95 L 470 95 L 470 125 L 478 145 L 470 165 L 474 185 L 460 200 L 464 218 L 450 235 L 446 252 L 432 262 L 420 254 L 402 258 L 384 252 L 366 258 L 348 252 L 330 258 L 312 252 L 294 258 L 290 252 L 290 95 Z"
+      fill="rgba(21,128,61,0.25)"
       stroke="#15803D"
       strokeWidth="2"
     />
-    {/* Tulsa pin */}
-    <circle cx="350" cy="160" r="6" fill="#15803D" />
-    <circle cx="350" cy="160" r="3" fill="white" />
-    <text x="350" y="185" textAnchor="middle" fill="#15803D" fontSize="12" fontWeight="600" fontFamily="Inter, sans-serif">
+    {/* Tulsa marker */}
+    <circle cx="355" cy="160" r="7" fill="#15803D" />
+    <circle cx="355" cy="160" r="3.5" fill="white" />
+    <text x="355" y="182" textAnchor="middle" fill="#15803D" fontSize="11" fontWeight="600" fontFamily="Inter, sans-serif">
       Tulsa
     </text>
   </svg>
@@ -52,7 +52,6 @@ const ServiceArea = () => (
       </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        {/* City list */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -86,7 +85,6 @@ const ServiceArea = () => (
           </p>
         </motion.div>
 
-        {/* Oklahoma SVG map */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}

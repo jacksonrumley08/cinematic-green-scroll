@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { TreePine, ArrowUpRight, ArrowRight } from "lucide-react";
 
 const projects = [
-  { label: "Land Clearing", location: "Tulsa, OK", height: "aspect-[3/4]" },
-  { label: "Tree Removal", location: "Broken Arrow, OK", height: "aspect-[4/3]" },
-  { label: "Stump Grinding", location: "Owasso, OK", height: "aspect-[1/1]" },
-  { label: "Storm Damage", location: "Claremore, OK", height: "aspect-[4/3]" },
-  { label: "Brush Removal", location: "Bartlesville, OK", height: "aspect-[3/4]" },
-  { label: "Lot Clearing", location: "Catoosa, OK", height: "aspect-[1/1]" },
+  { label: "Land Clearing", location: "Tulsa, OK", h: "h-[280px]" },
+  { label: "Tree Removal", location: "Broken Arrow, OK", h: "h-[380px]" },
+  { label: "Stump Grinding", location: "Owasso, OK", h: "h-[280px]" },
+  { label: "Storm Damage", location: "Claremore, OK", h: "h-[350px]" },
+  { label: "Brush Removal", location: "Bartlesville, OK", h: "h-[250px]" },
+  { label: "Lot Clearing", location: "Catoosa, OK", h: "h-[350px]" },
 ];
 
 const Gallery = () => (
@@ -28,7 +28,6 @@ const Gallery = () => (
         </h2>
       </motion.div>
 
-      {/* Masonry layout with CSS columns */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {projects.map((project, i) => (
           <motion.div
@@ -40,17 +39,16 @@ const Gallery = () => (
             className="break-inside-avoid"
           >
             <div
-              className={`group relative ${project.height} rounded-xl bg-muted overflow-hidden cursor-pointer`}
+              className={`group relative ${project.h} rounded-xl bg-muted overflow-hidden cursor-pointer`}
             >
               <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]">
                 <TreePine className="h-12 w-12 text-primary/20" />
               </div>
-              {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-center">
-                  <p className="text-white font-semibold">{project.label}</p>
-                  <p className="text-white/70 text-sm">{project.location}</p>
-                  <ArrowUpRight className="h-5 w-5 text-white mx-auto mt-2" />
+                  <p className="text-white font-semibold text-lg">{project.label}</p>
+                  <p className="text-white/70 text-sm mt-1">{project.location}</p>
+                  <ArrowUpRight className="h-5 w-5 text-white mx-auto mt-3" />
                 </div>
               </div>
             </div>

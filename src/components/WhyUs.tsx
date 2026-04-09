@@ -36,8 +36,18 @@ const WhyUs = () => (
           transition={{ duration: 0.7 }}
           className="relative"
         >
-          <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/15 to-primary-light/10 flex items-center justify-center border-l-4 border-primary">
-            <TreePine className="h-20 w-20 text-primary/20" />
+          <div className="aspect-[3/4] rounded-2xl relative overflow-hidden border-l-4 border-primary"
+            style={{
+              background: "linear-gradient(180deg, #15803D 0%, #064E3B 100%)",
+              boxShadow: "inset 0 2px 40px rgba(0,0,0,0.3)",
+            }}
+          >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <TreePine className="h-40 w-40 text-white/20" strokeWidth={0.8} />
+            </div>
+            <TreePine className="absolute bottom-6 left-6 h-24 w-24 text-white/10" strokeWidth={0.8} />
+            <TreePine className="absolute top-8 right-8 h-20 w-20 text-white/8" strokeWidth={0.8} />
+            <TreePine className="absolute top-1/3 left-[20%] h-14 w-14 text-white/6" strokeWidth={0.8} />
           </div>
         </motion.div>
 

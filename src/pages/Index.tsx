@@ -14,6 +14,10 @@ const Index = () => (
     <Navbar />
     <Hero />
     <TrustBar />
+    {/* Green accent separator */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="h-0.5 bg-primary/80 w-full" />
+    </div>
     <Services />
     <Gallery />
     <WhyUs />
