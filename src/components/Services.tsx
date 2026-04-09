@@ -78,7 +78,7 @@ const Services = () => (
         ))}
       </div>
       <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <motion.div
+        {services.slice(3).map((service, i) => (
             key={service.title}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
