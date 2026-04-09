@@ -56,8 +56,28 @@ const Services = () => (
         </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service, i) => (
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        {services.slice(0, 3).map((service, i) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="group p-6 sm:p-8 rounded-2xl border border-border bg-card hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center mb-5">
+              <service.icon className="h-6 w-6 text-primary-foreground" />
+            </div>
+            <h3 className="text-xl font-bold text-heading mb-2">{service.title}</h3>
+            <p className="text-body leading-relaxed mb-4">{service.description}</p>
+            <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+              Learn More <ArrowRight className="h-3.5 w-3.5" />
+            </span>
+          </motion.div>
+        ))}
+      </div>
+      <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <motion.div
             key={service.title}
             initial={{ opacity: 0, y: 30 }}
