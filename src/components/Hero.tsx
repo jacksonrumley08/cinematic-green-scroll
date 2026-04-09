@@ -58,8 +58,12 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/20 to-primary-light/20 flex items-center justify-center shadow-2xl shadow-primary/10 border border-primary/10">
-              <TreePine className="h-24 w-24 text-primary/30" />
+            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-2xl shadow-primary/30 border border-primary/10 relative overflow-hidden"
+              style={{ boxShadow: "inset 0 2px 30px rgba(0,0,0,0.2), 0 25px 50px -12px rgba(21,128,61,0.3)" }}
+            >
+              <TreePine className="h-32 w-32 text-white/15" strokeWidth={1} />
+              <TreePine className="absolute bottom-6 left-8 h-20 w-20 text-white/10" strokeWidth={1} />
+              <TreePine className="absolute top-8 right-10 h-16 w-16 text-white/10" strokeWidth={1} />
             </div>
             {/* Floating badge */}
             <motion.div

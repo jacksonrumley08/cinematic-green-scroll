@@ -4,9 +4,8 @@ import { Phone, Mail, Clock, ArrowRight } from "lucide-react";
 const Contact = () => (
   <section id="contact" className="py-24 sm:py-32 relative overflow-hidden">
     {/* Green radial glow */}
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
-    </div>
+    <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 600px 500px at 50% 30%, rgba(34,197,94,0.07) 0%, transparent 70%)" }} />
+    <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle 400px at 50% 40%, rgba(21,128,61,0.05) 0%, transparent 70%)" }} />
 
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <motion.div
