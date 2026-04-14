@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm">
               <p>(918) 555-0123</p>
               <p>info@advancedtreeservice.com</p>
-              <p>Tulsa, Oklahoma</p>
+              <p>Grove, Oklahoma</p>
             </div>
           </div>
         </div>
