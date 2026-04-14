@@ -55,7 +55,7 @@ const Slider = ({ before, after, label, objectPosition = "center" }: { before: s
         <div className="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full z-20">Before</div>
         <div className="absolute top-3 right-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full z-20">After</div>
       </div>
-      <p className="text-sm font-medium text-body text-center">{label}</p>
+      
     </div>
   );
 };
