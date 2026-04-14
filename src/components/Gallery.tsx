@@ -20,6 +20,7 @@ const projects = [
 const beforeAfterPairs = [
   { before: beforeImg1, after: afterImg1, label: "Tree Removal — Tulsa, OK" },
   { before: beforeImg2, after: afterImg2, label: "Storm Damage Cleanup — Claremore, OK" },
+  { before: beforeImg3, after: afterImg3, label: "Tree Trimming — Broken Arrow, OK" },
 ];
 
 const Slider = ({ before, after, label }: { before: string; after: string; label: string }) => {
