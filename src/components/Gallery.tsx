@@ -23,7 +23,7 @@ const beforeAfterPairs = [
   { before: beforeImg3, after: afterImg3, label: "Tree Trimming — Broken Arrow, OK", objectPosition: "bottom" },
 ];
 
-const Slider = ({ before, after, label }: { before: string; after: string; label: string }) => {
+const Slider = ({ before, after, label, objectPosition = "center" }: { before: string; after: string; label: string; objectPosition?: string }) => {
   const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -45,9 +45,9 @@ const Slider = ({ before, after, label }: { before: string; after: string; label
         onPointerUp={() => { dragging.current = false; }}
         onPointerLeave={() => { dragging.current = false; }}
       >
-        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition }} draggable={false} />
         <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-          <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" style={{ width: ref.current?.offsetWidth || "100%", maxWidth: "none" }} draggable={false} />
+          <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" style={{ width: ref.current?.offsetWidth || "100%", maxWidth: "none", objectPosition }} draggable={false} />
         </div>
         <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10" style={{ left: `${pos}%`, transform: "translateX(-50%)" }}>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center">
