@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Shield, Clock, Award, Users } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import whyBeforeImg from "@/assets/why-before.png";
-import whyAfterImg from "@/assets/why-after.png";
+import beforeImg3 from "@/assets/before3.png";
+import afterImg3 from "@/assets/after3.png";
 
 const differentiators = [
   {
@@ -39,12 +39,12 @@ const WhyUs = () => (
           className="relative"
         >
           <BeforeAfterSlider
-            before={whyBeforeImg}
-            after={whyAfterImg}
-            beforeAlt="Before land clearing"
-            afterAlt="After land clearing"
+            before={beforeImg3}
+            after={afterImg3}
+            beforeAlt="Before tree trimming"
+            afterAlt="After tree trimming"
             className="aspect-[3/4]"
-            objectPosition="center"
+            objectPosition="bottom"
           />
         </motion.div>
 
