@@ -5,6 +5,8 @@ import beforeImg1 from "@/assets/before.png";
 import afterImg1 from "@/assets/after.png";
 import beforeImg2 from "@/assets/before2.png";
 import afterImg2 from "@/assets/after2.png";
+import beforeImg3 from "@/assets/before3.png";
+import afterImg3 from "@/assets/after3.png";
 
 const projects = [
   { label: "Land Clearing", location: "Tulsa, OK", h: "h-[280px]" },
@@ -18,6 +20,7 @@ const projects = [
 const beforeAfterPairs = [
   { before: beforeImg1, after: afterImg1, label: "Tree Removal — Tulsa, OK" },
   { before: beforeImg2, after: afterImg2, label: "Storm Damage Cleanup — Claremore, OK" },
+  { before: beforeImg3, after: afterImg3, label: "Tree Trimming — Broken Arrow, OK" },
 ];
 
 const Slider = ({ before, after, label }: { before: string; after: string; label: string }) => {
