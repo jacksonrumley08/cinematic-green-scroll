@@ -89,6 +89,7 @@ const Gallery = () => (
         {beforeAfterPairs.map((pair, i) => (
           <Slider key={i} {...pair} />
         ))}
+      </motion.div>
     </div>
   </section>
 );
