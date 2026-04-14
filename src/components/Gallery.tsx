@@ -9,11 +9,13 @@ import beforeImg3 from "@/assets/before3.png";
 import afterImg3 from "@/assets/after3.png";
 import beforeImg4 from "@/assets/before4.png";
 import afterImg4 from "@/assets/after4.png";
+import whyBeforeImg from "@/assets/why-before.png";
+import whyAfterImg from "@/assets/why-after.png";
 
 const beforeAfterPairs = [
   { before: beforeImg1, after: afterImg1 },
   { before: beforeImg2, after: afterImg2 },
-  { before: beforeImg3, after: afterImg3, objectPosition: "bottom" },
+  { before: whyBeforeImg, after: whyAfterImg },
   { before: beforeImg4, after: afterImg4 },
 ];
 
