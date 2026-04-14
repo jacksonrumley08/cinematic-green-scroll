@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
+import BeforeAfter from "@/components/BeforeAfter";
 import WhyUs from "@/components/WhyUs";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
