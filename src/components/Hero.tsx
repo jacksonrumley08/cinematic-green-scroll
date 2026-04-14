@@ -26,7 +26,7 @@ const Hero = () => {
             transition={{ duration: 0.7 }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-heading leading-[1.08] tracking-tight">
-              Northeast Oklahoma's{" "}
+              The Four States Area's{" "}
               <span className="text-primary">Premier</span> Tree & Land
               Clearing Experts
             </h1>
@@ -84,7 +84,7 @@ const Hero = () => {
               className="absolute -bottom-4 -left-4 sm:bottom-4 sm:-left-6 bg-background border border-primary/30 rounded-full px-4 py-2 shadow-lg"
             >
               <span className="text-sm font-semibold text-primary">
-                Serving NE Oklahoma Since 2009
+                Serving the Four States Area Since 2009
               </span>
             </motion.div>
           </motion.div>

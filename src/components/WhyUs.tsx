@@ -20,7 +20,7 @@ const differentiators = [
   {
     icon: Users,
     title: "Trusted by Hundreds",
-    description: "Over 500 satisfied customers across Northeast Oklahoma and growing.",
+    description: "Over 500 satisfied customers across the Four States area and growing.",
   },
 ];
 
@@ -63,7 +63,7 @@ const WhyUs = () => (
               Why Advanced Tree Service
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-heading">
-              The Team Northeast Oklahoma Trusts
+              The Team the Four States Area Trusts
             </h2>
           </motion.div>
 

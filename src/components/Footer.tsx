@@ -24,7 +24,7 @@ const Footer = () => {
               <span className="text-lg font-bold text-primary-foreground">Advanced Tree Service</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Northeast Oklahoma's trusted experts in tree removal, land clearing, and stump grinding.
+              The Four States area's trusted experts in tree removal, land clearing, and stump grinding.
             </p>
           </div>
 
