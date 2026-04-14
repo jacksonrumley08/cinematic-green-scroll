@@ -23,6 +23,7 @@ const beforeAfterPairs = [
   { before: beforeImg1, after: afterImg1, label: "Tree Removal — Tulsa, OK" },
   { before: beforeImg2, after: afterImg2, label: "Storm Damage Cleanup — Claremore, OK" },
   { before: beforeImg3, after: afterImg3, label: "Tree Trimming — Broken Arrow, OK", objectPosition: "bottom" },
+  { before: beforeImg4, after: afterImg4, label: "Tree Removal — Grand Lake, OK" },
 ];
 
 const Slider = ({ before, after, label, objectPosition = "center" }: { before: string; after: string; label: string; objectPosition?: string }) => {
