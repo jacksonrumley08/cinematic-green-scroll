@@ -4,7 +4,6 @@ import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
-import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -19,7 +18,6 @@ const Index = () => (
     <Services />
     <Gallery />
     <WhyUs />
-    <Testimonials />
     <Contact />
     <Footer />
   </div>
