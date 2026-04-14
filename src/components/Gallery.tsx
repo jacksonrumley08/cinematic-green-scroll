@@ -7,6 +7,8 @@ import beforeImg2 from "@/assets/before2.png";
 import afterImg2 from "@/assets/after2.png";
 import beforeImg3 from "@/assets/before3.png";
 import afterImg3 from "@/assets/after3.png";
+import beforeImg4 from "@/assets/before4.png";
+import afterImg4 from "@/assets/after4.png";
 
 const projects = [
   { label: "Land Clearing", location: "Tulsa, OK", h: "h-[280px]" },
