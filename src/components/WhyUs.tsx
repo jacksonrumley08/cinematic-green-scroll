@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { Shield, Clock, Award, Users, TreePine } from "lucide-react";
+import { Shield, Clock, Award, Users } from "lucide-react";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import whyBeforeImg from "@/assets/why-before.png";
+import whyAfterImg from "@/assets/why-after.png";
 
 const differentiators = [
   {
@@ -28,7 +31,6 @@ const WhyUs = () => (
   <section id="about" className="py-24 sm:py-32">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -36,22 +38,16 @@ const WhyUs = () => (
           transition={{ duration: 0.7 }}
           className="relative"
         >
-          <div className="aspect-[3/4] rounded-2xl relative overflow-hidden border-l-4 border-primary"
-            style={{
-              background: "linear-gradient(180deg, #15803D 0%, #064E3B 100%)",
-              boxShadow: "inset 0 2px 40px rgba(0,0,0,0.3)",
-            }}
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <TreePine className="h-40 w-40 text-white/20" strokeWidth={0.8} />
-            </div>
-            <TreePine className="absolute bottom-6 left-6 h-24 w-24 text-white/10" strokeWidth={0.8} />
-            <TreePine className="absolute top-8 right-8 h-20 w-20 text-white/8" strokeWidth={0.8} />
-            <TreePine className="absolute top-1/3 left-[20%] h-14 w-14 text-white/6" strokeWidth={0.8} />
-          </div>
+          <BeforeAfterSlider
+            before={whyBeforeImg}
+            after={whyAfterImg}
+            beforeAlt="Before land clearing"
+            afterAlt="After land clearing"
+            className="aspect-[3/4]"
+            objectPosition="center"
+          />
         </motion.div>
 
-        {/* Right content */}
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
