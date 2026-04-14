@@ -19,6 +19,7 @@ const Index = () => (
     </div>
     <Services />
     <Gallery />
+    <BeforeAfter />
     <WhyUs />
     <Testimonials />
     <Contact />
