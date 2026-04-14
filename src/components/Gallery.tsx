@@ -1,5 +1,10 @@
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { TreePine, ArrowUpRight, ArrowRight } from "lucide-react";
+import beforeImg1 from "@/assets/before.png";
+import afterImg1 from "@/assets/after.png";
+import beforeImg2 from "@/assets/before2.png";
+import afterImg2 from "@/assets/after2.png";
 
 const projects = [
   { label: "Land Clearing", location: "Tulsa, OK", h: "h-[280px]" },
@@ -9,6 +14,53 @@ const projects = [
   { label: "Brush Removal", location: "Bartlesville, OK", h: "h-[250px]" },
   { label: "Lot Clearing", location: "Catoosa, OK", h: "h-[350px]" },
 ];
+
+const beforeAfterPairs = [
+  { before: beforeImg1, after: afterImg1, label: "Tree Removal — Tulsa, OK" },
+  { before: beforeImg2, after: afterImg2, label: "Storm Damage Cleanup — Claremore, OK" },
+];
+
+const Slider = ({ before, after, label }: { before: string; after: string; label: string }) => {
+  const [pos, setPos] = useState(50);
+  const ref = useRef<HTMLDivElement>(null);
+  const dragging = useRef(false);
+
+  const update = (clientX: number) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    setPos((x / rect.width) * 100);
+  };
+
+  return (
+    <div className="space-y-3">
+      <div
+        ref={ref}
+        className="relative aspect-[4/3] rounded-xl overflow-hidden cursor-ew-resize select-none shadow-lg"
+        onPointerDown={(e) => { dragging.current = true; (e.target as HTMLElement).setPointerCapture(e.pointerId); update(e.clientX); }}
+        onPointerMove={(e) => { if (dragging.current) update(e.clientX); }}
+        onPointerUp={() => { dragging.current = false; }}
+        onPointerLeave={() => { dragging.current = false; }}
+      >
+        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+        <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
+          <img src={before} alt="Before" className="absolute inset-0 w-full h-full object-cover" style={{ width: ref.current?.offsetWidth || "100%", maxWidth: "none" }} draggable={false} />
+        </div>
+        <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10" style={{ left: `${pos}%`, transform: "translateX(-50%)" }}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" className="text-primary">
+              <path d="M7 4L3 10L7 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M13 4L17 10L13 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div className="absolute top-3 left-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full z-20">Before</div>
+        <div className="absolute top-3 right-3 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full z-20">After</div>
+      </div>
+      <p className="text-sm font-medium text-body text-center">{label}</p>
+    </div>
+  );
+};
 
 const Gallery = () => (
   <section id="gallery" className="py-24 sm:py-32">
@@ -28,6 +80,20 @@ const Gallery = () => (
         </h2>
       </motion.div>
 
+      {/* Before & After sliders */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="grid sm:grid-cols-2 gap-6 mb-16"
+      >
+        {beforeAfterPairs.map((pair, i) => (
+          <Slider key={i} {...pair} />
+        ))}
+      </motion.div>
+
+      {/* Masonry gallery */}
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {projects.map((project, i) => (
           <motion.div
