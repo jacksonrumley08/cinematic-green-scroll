@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { TreePine } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import beforeImg1 from "@/assets/before.png";
 import afterImg1 from "@/assets/after.png";
 import beforeImg2 from "@/assets/before2.png";
@@ -90,6 +90,12 @@ const Gallery = () => (
           <Slider key={i} {...pair} />
         ))}
       </motion.div>
+
+      <div className="mt-10 text-center">
+        <a href="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+          View All Jobs <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
     </div>
   </section>
 );
