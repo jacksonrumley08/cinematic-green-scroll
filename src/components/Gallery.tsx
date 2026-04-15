@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import beforeImg1 from "@/assets/before.png";
@@ -50,9 +51,9 @@ const Gallery = () => (
       </motion.div>
 
       <div className="mt-10 text-center">
-        <a href="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+        <Link to="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
           View All Jobs <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </div>
   </section>
