@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TreePine, Disc3, LandPlot, Truck, Zap, ArrowRight } from "lucide-react";
+import { TreePine, Disc3, LandPlot, Truck, Zap } from "lucide-react";
 
 const services = [
   {
@@ -70,10 +70,7 @@ const Services = () => (
               <service.icon className="h-6 w-6 text-primary-foreground" />
             </div>
             <h3 className="text-xl font-bold text-heading mb-2">{service.title}</h3>
-            <p className="text-body leading-relaxed mb-4">{service.description}</p>
-            <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-              Learn More <ArrowRight className="h-3.5 w-3.5" />
-            </span>
+             <p className="text-body leading-relaxed">{service.description}</p>
           </motion.div>
         ))}
       </div>
@@ -90,10 +87,7 @@ const Services = () => (
               <service.icon className="h-6 w-6 text-primary-foreground" />
             </div>
             <h3 className="text-xl font-bold text-heading mb-2">{service.title}</h3>
-            <p className="text-body leading-relaxed mb-4">{service.description}</p>
-            <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-              Learn More <ArrowRight className="h-3.5 w-3.5" />
-            </span>
+             <p className="text-body leading-relaxed">{service.description}</p>
           </motion.div>
         ))}
       </div>
