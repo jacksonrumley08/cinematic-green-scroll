@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Shield, Clock, Award, Users } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import beforeImg3 from "@/assets/before3.png";
-import afterImg3 from "@/assets/after3.png";
+import beforeImg3 from "@/assets/before3.webp";
+import afterImg3 from "@/assets/after3.webp";
 
 const differentiators = [
   {

@@ -7,7 +7,7 @@ const GalleryPage = () => (
   <div className="min-h-screen">
     <Navbar />
     <main className="pt-20">
-      <Gallery />
+      <Gallery showViewAllLink={false} />
       <Contact />
     </main>
     <Footer />
