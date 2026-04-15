@@ -47,9 +47,6 @@ const GalleryPage = () => (
             <Link to="/" className="inline-flex items-center gap-2 text-primary font-semibold mb-6 hover:gap-3 transition-all">
               <ArrowLeft className="h-4 w-4" /> Back to Home
             </Link>
-            <span className="text-xs font-semibold tracking-[0.15em] uppercase text-primary">
-              Full Gallery
-            </span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-bold text-heading leading-tight">
               Photo Gallery From Real Jobs
             </h1>
