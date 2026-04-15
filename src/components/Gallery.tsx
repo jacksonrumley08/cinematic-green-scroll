@@ -54,9 +54,9 @@ const Gallery = ({ showViewAllLink = true }: GalleryProps) => (
 
       {showViewAllLink && (
         <div className="mt-10 text-center">
-          <Link to="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            View All Jobs <ArrowRight className="h-4 w-4" />
-          </Link>
+        <Link to="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+          View All Photos <ArrowRight className="h-4 w-4" />
+        </Link>
         </div>
       )}
     </div>

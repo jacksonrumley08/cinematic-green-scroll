@@ -1,6 +1,7 @@
 import { TreePine } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-const links = [
+const homeLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "Gallery", href: "#gallery" },
@@ -9,6 +10,9 @@ const links = [
 ];
 
 const Footer = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -17,7 +21,6 @@ const Footer = () => {
     <footer className="bg-foreground text-primary-foreground/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid sm:grid-cols-3 gap-12">
-          {/* Branding */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <TreePine className="h-6 w-6 text-primary-light" />
@@ -28,23 +31,29 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick links */}
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4">Quick Links</h4>
             <div className="space-y-2">
-              {links.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  className="block text-sm hover:text-primary-foreground transition-colors"
-                >
-                  {link.label}
-                </button>
-              ))}
+              {isHome ? (
+                homeLinks.map((link) => (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollTo(link.href)}
+                    className="block text-sm hover:text-primary-foreground transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                ))
+              ) : (
+                <>
+                  <Link to="/" className="block text-sm hover:text-primary-foreground transition-colors">Home</Link>
+                  <Link to="/gallery" className="block text-sm hover:text-primary-foreground transition-colors">Gallery</Link>
+                  <Link to="/#contact" className="block text-sm hover:text-primary-foreground transition-colors">Contact</Link>
+                </>
+              )}
             </div>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4">Contact</h4>
             <div className="space-y-2 text-sm">
