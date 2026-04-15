@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import heroBeforeImg from "@/assets/hero-before.png";
-import heroAfterImg from "@/assets/hero-after.png";
+import heroBeforeImg from "@/assets/hero-before.webp";
+import heroAfterImg from "@/assets/hero-after.webp";
 
 const Hero = () => {
   const scrollTo = (href: string) => {

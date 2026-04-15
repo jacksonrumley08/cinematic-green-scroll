@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import beforeImg1 from "@/assets/before.png";
-import afterImg1 from "@/assets/after.png";
-import beforeImg2 from "@/assets/before2.png";
-import afterImg2 from "@/assets/after2.png";
-import beforeImg3 from "@/assets/before3.png";
-import afterImg3 from "@/assets/after3.png";
-import beforeImg4 from "@/assets/before4.png";
-import afterImg4 from "@/assets/after4.png";
-import whyBeforeImg from "@/assets/why-before.png";
-import whyAfterImg from "@/assets/why-after.png";
+import beforeImg1 from "@/assets/before.webp";
+import afterImg1 from "@/assets/after.webp";
+import beforeImg2 from "@/assets/before2.webp";
+import afterImg2 from "@/assets/after2.webp";
+import beforeImg4 from "@/assets/before4.webp";
+import afterImg4 from "@/assets/after4.webp";
+import whyBeforeImg from "@/assets/why-before.webp";
+import whyAfterImg from "@/assets/why-after.webp";
 
 const beforeAfterPairs = [
   { before: beforeImg1, after: afterImg1 },
@@ -19,7 +18,11 @@ const beforeAfterPairs = [
   { before: beforeImg4, after: afterImg4 },
 ];
 
-const Gallery = () => (
+interface GalleryProps {
+  showViewAllLink?: boolean;
+}
+
+const Gallery = ({ showViewAllLink = true }: GalleryProps) => (
   <section id="gallery" className="py-24 sm:py-32">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -49,11 +52,13 @@ const Gallery = () => (
         ))}
       </motion.div>
 
-      <div className="mt-10 text-center">
-        <a href="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-          View All Jobs <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
+      {showViewAllLink && (
+        <div className="mt-10 text-center">
+          <Link to="/gallery" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            View All Jobs <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      )}
     </div>
   </section>
 );
